@@ -1,4 +1,4 @@
-TellementNomade, une chronique pour 3 ans de commmunauté en ligne
+TellementNomade, a 3-4 year chronicle as a community administrator
 =====================================
 
 It could be considered as one of those many call to action, or a final, sad & desperate, report. This is not, but mostly a laidback feedback, motivated by another presentation at MixIT, by the community manager of lichess.org. It's a repository of ideas, remarks, to help others not to repeat the same mistakes that I've done in those last 4 years.
