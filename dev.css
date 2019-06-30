@@ -1,0 +1,155 @@
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+:root {
+  --bg-color: #ebebeb;
+  --title-color: #0f8b8d;
+  --text-color: #143642;
+  /* profile pic */
+  --pic-size: 150px;
+  --pic-radius: 15%;
+}
+/* Colors */
+h1, h2, h3 {
+  color: var(--text-color);
+}
+body {
+  background-color: var(--bg-color);
+}
+/* Header */
+h1 {
+  font-size: 3rem;
+  align-self: center;
+  flex: 1 0 auto;
+}
+h2 {
+  font-size: 3rem;
+}
+header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.profile-pic {
+  margin-right: 2%;
+  margin-left: 2%;
+  z-index: 1;
+}
+.profile-pic img {
+  border-radius: var(--pic-radius);
+  max-width: var(--pic-size);
+  max-height: var(--pic-size);
+}
+.print {
+  display: none;
+}
+/* Honest to god, I should stop playing with CSS */
+/* .profile-pic::after{
+  position: absolute;
+  display: block;
+  z-index: -2;
+  transform: rotate(45deg);
+  content: ' ';
+  background-color: #b1b1b1;
+  border-radius: var(--img-radius);
+  width: 180px;
+  height: 180px;
+  margin: -192px 10px;
+} */
+
+/* Body */
+article .about, article .experience, article .education {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* TEST */
+article {
+  display: flex;
+  flex-direction: column;
+}
+.experience {
+  order: 1;
+}
+.education {
+  break-before: page;
+  order: 2;
+}
+.about {
+  order: 3;
+}
+/* /TEST */
+.about li {
+  list-style: square;
+}
+.job {
+  margin-top: 1rem;
+}
+.job:hover {
+  cursor: pointer;
+}
+.job .date {
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.job .keywords {
+  font-size: 0.7rem;
+  margin-left: 5.2rem;
+}
+.job .keywords ul {
+  display: inline-block;
+  margin: 0 0;
+  padding-left: 0.2rem;
+}
+.job .keywords li {
+  display: inline-block;
+}
+.job .keywords li:not(:last-child):after {
+  content: ',';
+}
+summary {
+  display: block;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+.details {
+  border-left: 1px solid black;
+  margin-left: 2rem;
+  font-size: 0.9rem;
+}
+
+.details p {
+  margin-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: pre-line;
+}
+details[open] .details p {
+  padding-top: 1rem;
+}
+
+.job:not(:last-child)::after {
+  display: block;
+  border-left: 1px solid black;
+  content: ' ';
+  height: 2rem;
+  width: 1px;
+  margin-left: 2rem;
+}
+
+/* Specific to education */
+.education .job:not(:last-child)::after {
+  margin-top: 1rem;
+}
+.education .job:hover {
+  cursor: inherit;
+}
+/* Footer */
+footer {
+  display: contents;
+}

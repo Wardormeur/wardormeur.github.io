@@ -1,0 +1,40 @@
+@media print {
+.print {
+  display: block;
+}
+.disable-print {
+  display: none;
+}
+body {
+  display: block;
+}
+article {
+  display:flex;
+  flex-direction: column;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+.experience {
+    break-before: page;
+  order: 1;
+}
+.education {
+  break-before: page;
+  order: 2;
+}
+.about {
+    break-before: page;
+  order: 3;
+}
+.reference {
+  position: fixed;
+  bottom: 0px;
+  font-size: 0.7rem;
+}
