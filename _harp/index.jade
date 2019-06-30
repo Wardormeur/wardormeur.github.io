@@ -1,0 +1,18 @@
+h1 /etc/dev/../random
+h4 because art tickles
+ul(class='art-ticles')
+	each article, slug in public.posts._data
+		if article.status
+			if article.languages
+				each language in article.languages
+					li
+						a(href="/posts/#{ slug }-#{ language }") #{ article.title } ( #{ language } )
+			else
+				li
+					a(href="/posts/#{ slug }") #{ article.title }
+h3 Cron-tact :
+ul(class='cron-tact')
+	li
+		a(href='https://twitter.com/gfelici') @Gfelici
+	li
+		a(href='https://github.com/wardormeur') Wardormeur
