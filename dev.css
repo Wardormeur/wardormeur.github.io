@@ -24,18 +24,18 @@ body {
 h1 {
   font-size: 3rem;
   align-self: center;
-  flex: 1 0 auto;
 }
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 header {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .profile-pic {
-  margin-right: 2%;
-  margin-left: 2%;
+  padding-left: 2em;
   z-index: 1;
 }
 .profile-pic img {
@@ -66,22 +66,6 @@ article .about, article .experience, article .education {
   justify-content: center;
   flex-direction: column;
 }
-/* TEST */
-article {
-  display: flex;
-  flex-direction: column;
-}
-.experience {
-  order: 1;
-}
-.education {
-  break-before: page;
-  order: 2;
-}
-.about {
-  order: 3;
-}
-/* /TEST */
 .about li {
   list-style: square;
 }
@@ -151,5 +135,11 @@ details[open] .details p {
 }
 /* Footer */
 footer {
-  display: contents;
+  display: block;
+}
+footer h3 {
+  text-align: center;
+}
+footer a:not(:first-child) {
+  margin-left: 1em;
 }
