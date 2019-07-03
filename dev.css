@@ -95,9 +95,10 @@ article .about, article .experience, article .education {
 .job .keywords li:not(:last-child):after {
   content: ',';
 }
+/* Tested by Sonja, it seems people don't notice it's expendable
 summary {
   display: block;
-}
+}*/
 summary::-webkit-details-marker {
   display: none;
 }
