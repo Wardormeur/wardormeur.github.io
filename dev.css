@@ -98,9 +98,35 @@ article .about, article .experience, article .education {
 /* Tested by Sonja, it seems people don't notice it's expendable
 summary {
   display: block;
-}*/
+}
 summary::-webkit-details-marker {
   display: none;
+}*/
+summary {
+  list-style-image: url('/img/baseline-expand_more-24px.svg');
+}
+
+summary::-moz-list-bullet {
+  position: absolute;
+  margin-left: 100%;
+  margin-bottom: -1.3rem;
+}
+
+details[open] summary {
+  list-style-image: url('/img/baseline-expand_less-24px.svg');
+}
+summary::-webkit-details-marker {
+  float: right;
+  background-position: center;
+  background-image: url('/img/baseline-expand_more-24px.svg');
+  color: transparent;
+}
+
+details[open] summary::-webkit-details-marker {
+  float: right;
+  background-position: center;
+  background-image: url('/img/baseline-expand_less-24px.svg');
+  color: transparent;
 }
 .details {
   border-left: 1px solid black;
