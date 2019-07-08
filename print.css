@@ -5,21 +5,36 @@
 	.disable-print {
 	  display: none;
 	}
-	body, header, article {
+	body, article {
 	  display: block;
 	}
+    header {
+      justify-content: space-between;
+    }
 	article .about, article .experience, article .education {
 	  display: block;
 	}
+    a:after {
+      content:" (" attr(href) ") ";
+      font-size: 0.8em;
+      font-weight: normal;
+      font-style: italic;
+    }
 	h1 {
 	  font-size: 2rem;
 	}
 	h2 {
 	  font-size: 1.3rem;
 	}
+    h2::before {
+      width: 0;
+    }
 	h3 {
 	  font-size: 1.2rem;
 	}
+    summary {
+      display: block;
+    }
 	.job {
 	  break-inside: avoid;
 	}
@@ -32,6 +47,12 @@
 	.about {
 	  order: 3;
 	}
+    footer a {
+      display: block;
+    }
+    footer a:not(:first-child){
+      margin-left: 0;
+    }
 	.reference {
 	  position: fixed;
 	  bottom: 0px;
