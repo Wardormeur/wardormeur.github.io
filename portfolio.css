@@ -10,9 +10,9 @@ body {
   --title-color: #0f8b8d;
   --text-color: #143642;
   --light-text-color: #2d7893;
-  /* profile pic */
-  --pic-size: 150px;
-  --pic-radius: 15%;
+  --sec-color: #ff7e00;
+  --sec-light-color: #f2a153;
+  --sec-dark-color: #d26801;
 }
 /* Colors */
 h1, h2, h3 {
@@ -24,7 +24,7 @@ body {
 /* Header */
 h1 {
   font-size: 3rem;
-  color: red; 
+  color: var(--sec-color); 
 }
 h2 {
   font-size: 2.5rem;
@@ -80,6 +80,12 @@ section {
   /*TODO remove ?*/
   margin-bottom: 1rem;
 }
+section:nth-child(odd) .projects > li {
+  flex-direction: row-reverse;
+}
+section:nth-child(odd) .projects > li {
+  flex-direction: row-reverse;
+}
 .desc {
   flex: 1 1 auto;
   color: var(--bg-color);
@@ -87,20 +93,28 @@ section {
   flex-basis: 30%;
 }
 .desc h3 {
-  /*TODO get a better color*/
+  color: var(--sec-light-color);
+}
+.desc a {
+  color: var(--sec-color);
+}
+.desc a:visited {
+  color: var(--sec-dark-color);
 }
 .images {
   flex: 1 1 60%;
-  text-align: right;
   overflow: hidden;
   position: relative;
   min-height: 150px;
 }
 .images img {
-  max-width: 80%;
+  max-width: 95%;
   position: absolute;
   top: 0;
   right: 0;
+}
+section:nth-child(odd) .images img {
+  left: 0;
 }
 .images img.slide {
   transition: .5s;
@@ -108,7 +122,13 @@ section {
 }
 .images img.slide:hover {
   clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
-  mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
+  mask-image: linear-gradient(rgba(0, 0, 00, 1.0), transparent);
+}
+section:nth-child(odd) .images img.slide {
+  clip-path: polygon(0% 0%, 100% 0, 80% 100%, 0% 80%);
+}
+section:nth-child(odd) .images img.slide:hover {
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
 }
 .images img.scratch {
   animation: scratch 0.7s steps(29) forwards;
