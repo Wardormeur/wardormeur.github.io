@@ -1,0 +1,139 @@
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+:root {
+  --bg-color: #ebebeb;
+  --title-color: #0f8b8d;
+  --text-color: #143642;
+  --light-text-color: #2d7893;
+  /* profile pic */
+  --pic-size: 150px;
+  --pic-radius: 15%;
+}
+/* Colors */
+h1, h2, h3 {
+  color: var(--text-color);
+}
+body {
+  background-color: var(--bg-color);
+}
+/* Header */
+h1 {
+  font-size: 3rem;
+  color: red; 
+}
+h2 {
+  font-size: 2.5rem;
+}
+header {
+  text-align: center;
+  flex: 1 0 auto;
+  clip-path: polygon(0 100%, 100% 100%, 100% 24%, 69% 19%, 67% 0, 40% 20%, 0 23%);
+  background-color: var(--text-color);
+  padding: 3rem;
+  align-self: center;
+}
+header p {
+  font-style: italic;
+  color: var(--bg-color);
+}
+section {
+  /*background-color: var(--light-text-color);*/
+}
+.section-header {
+  display: flex;
+}
+.section-header h2 {
+  margin: 0;
+  align-self: center;
+}
+.section-header .logo.rpf {
+  height: 5rem;
+}
+.section-header .logo.cdf {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  max-height: 3rem;
+}
+.section-header .logo.pay {
+  padding-right: 1rem;
+  padding-left: 1.3rem;
+  padding-top: 0.5rem;
+  max-height: 2rem;
+}
+.section-header .logo.tn {
+  padding-right: 1rem;
+  padding-left: 1.3rem;
+  max-height: 3.5rem;
+}
+.projects > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--light-text-color);
+  min-height: 150px;
+  flex-wrap: wrap;
+  /*TODO remove ?*/
+  margin-bottom: 1rem;
+}
+.desc {
+  flex: 1 1 auto;
+  color: var(--bg-color);
+  padding: 2rem;
+  flex-basis: 30%;
+}
+.desc h3 {
+  /*TODO get a better color*/
+}
+.images {
+  flex: 1 1 60%;
+  text-align: right;
+  overflow: hidden;
+  position: relative;
+  min-height: 150px;
+}
+.images img {
+  max-width: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.images img.slide {
+  transition: .5s;
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+.images img.slide:hover {
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+  mask-image: linear-gradient(rgba(0, 0, 0, 1.0), transparent);
+}
+.images img.scratch {
+  animation: scratch 0.7s steps(29) forwards;
+}
+.images img.scratch:hover {
+  animation: scratch_reverse 0.7s steps(29) forwards;
+  mask: url('/img/eraser-sprite.png');
+  mask-size: 3000% 100%;
+}
+@keyframes scratch {
+ from {
+  mask-position: 0 0;
+ }
+
+ to {
+  mask-position: 100% 0;
+ }
+}
+@keyframes scratch_reverse {
+ from {
+  mask-position: 100% 0;
+ }
+
+ to {
+  mask-position: 0 0;
+ }
+}
+
