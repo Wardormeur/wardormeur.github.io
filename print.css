@@ -50,6 +50,9 @@
     footer a {
       display: block;
     }
+    footer h3 {
+      text-align: left;
+    }
     footer a:not(:first-child){
       margin-left: 0;
     }
