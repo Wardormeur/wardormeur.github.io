@@ -1,0 +1,11 @@
+.arrow-container {
+  position: absolute;
+}
+.arrow {
+  background-color: black;
+}
+.arrow p {
+  display: block;
+  color: red;
+  margin-top: 2rem;
+}
