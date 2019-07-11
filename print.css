@@ -26,6 +26,12 @@
 	h2 {
 	  font-size: 1.3rem;
 	}
+    hgroup h1 {
+      margin-bottom: 0.5rem;
+    }
+    hgroup h2 {
+      margin-top: 0px;
+    }
     h2::before {
       width: 0;
     }
