@@ -26,6 +26,12 @@
 	h2 {
 	  font-size: 1.3rem;
 	}
+    hgroup h1 {
+      margin-bottom: 0.5rem;
+    }
+    hgroup h2 {
+      margin-top: 0px;
+    }
     h2::before {
       width: 0;
     }
@@ -49,6 +55,9 @@
 	}
     footer a {
       display: block;
+    }
+    footer h3 {
+      text-align: left;
     }
     footer a:not(:first-child){
       margin-left: 0;
