@@ -1,187 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Guillaume Feliciano - Software Engineer</title>
-    <link rel="stylesheet" href="/dev.css">
-    <link rel="stylesheet" href="/print.css" media="print">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <!-- NOTE:
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Guillaume Feliciano - Software Engineer</title>
+  <link rel="stylesheet" href="/dev.css">
+  <link rel="stylesheet" href="/print.css" media="print">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <!-- NOTE:
      - God why is the details element so unfinished
      - :after is still dodgy for positionning
-     - printing stylesheet are still crap
+     - printing stylesheet are a pain
      Also, if you saw this... Welcome :)
      Sources are here, nothing fancy: https://github.com/Wardormeur/wardormeur.github.io
    -->
-  </head>
-  <body>
-    <header>
-      <div class="profile-pic">
-        <img alt="a clearly outdated picture of Guillaume F." src="/img/profile.jpg">
-      </div>
-      <hgroup>
-        <h1>Guillaume Feliciano</h1>
-        <h2 class="print">Full Stack Engineer</h2>
-      </hgroup>
-    </header>
-    <article>
-      <div class="about">
-        <h3 id="intro">In a few words</h3>
-        <ul>
-          <li>Adaptive: I'm a fast learner that quickly understands business needs</li>
-          <li>Dedicated: I will look for non-obvious alternatives before losing an opportunity</li>
-          <li>Enthusiastic: I consider the whole project instead of solely focusing on the current task</li>
-        </ul>
-      </div>
-      <div class="experience">
-        <h2 id="experience">Experience</h2>
-        <div class="job">
-          <details open>
-            <summary>
-              <span class="date">2017-2019</span> <span class="title">Senior Software Engineer</span> at <span class="company">RaspberryPi Foundation</span>
-              <div class="keywords">Keywords: <ul>
-                  <li>NodeJs</li>
-                  <li>Python</li>
-                  <li>Rails</li>
-                  <li>Kubernetes</li>
-                  <li>VueJs</li>
-                  <li>React</li>
-                  <li>PostgresQL</li>
-                </ul>
-              </div>
-            </summary>
-            <div class="details disable-print">
-              <p>
-                Continuity of CoderDojo's work into a larger organisation with a more diversified functional scope.
-                Data analysis via custom ETL and Google DataStudio, to communicate goals and vision with more ease.
-                Internal training courses about data analysis, kubernetes and security for teamates.
-                Security, automation of security and training with non-technical people.
-              </p>
+</head>
+
+<body>
+  <header>
+    <div class="profile-pic">
+      <img alt="a clearly outdated picture of Guillaume F." src="/img/profile.jpg">
+    </div>
+    <hgroup>
+      <h1>Guillaume Feliciano</h1>
+      <h2 class="print">Software Engineer</h2>
+    </hgroup>
+  </header>
+  <article>
+    <div class="about">
+      <h3 id="intro">In a few words</h3>
+      <ul>
+        <li>Strong opinions, weakly held</li>
+        <li>Radical candor</li>
+        <li>Product over process</li>
+      </ul>
+    </div>
+    
+    <div class="experience">
+      <h2 id="experience">
+        <button onclick="window.print()" class="printer disable-print">🖶</button>
+        Experience</h2>
+      <div class="job">
+        <details open>
+          <summary>
+            <span class="date">2019-2022</span> <span class="title">Product Engineer</span> at <span
+              class="company">Intercom</span>
+            <div class="keywords">Keywords: <ul>
+                <li>Ruby on Rails</li>
+                <li>Golang</li>
+                <li>ElasticSearch</li>
+                <li>EmberJs</li>
+              </ul>
             </div>
-          </details>
-          <div class="print details">
+          </summary>
+          <div class="details disable-print">
             <p>
-              Continuity of CoderDojo's work into a larger organisation with a more diversified functional scope.
+              My responsibilities as a product engineer were end to end. I had to own our projects from the
+              technical design to their planning and maintenance, up to implementing success metrics.
+              This large breadth of ownernship into a platform group lead me into multi-team projects, working with
+              varied roles and technologies in order to constantly have the most impactful results.
+              <a href="/portfolio.html#intercom">Portfolio</a>
+            </p>
+          </div>
+        </details>
+        <div class="print details">
+          <p>
+            My responsibilities as a product engineer were end to end. I had to own our projects from the technical
+            design to their planning and maintenance, up to implementing success metrics.
+            This large breadth of ownernship into a platform group lead me into multi-team projects, working with varied
+            roles and technologies in order to constantly have the most impactful results.
+          </p>
+        </div>
+      </div>
+      <div class="job">
+        <details>
+          <summary>
+            <span class="date">2017-2019</span> <span class="title">Senior Software Engineer</span> at <span
+              class="company">RaspberryPi Foundation</span>
+            <div class="keywords">Keywords: <ul>
+                <li>NodeJs</li>
+                <li>Python</li>
+                <li>Ruby on Rails</li>
+                <li>Kubernetes</li>
+                <li>VueJs</li>
+                <li>React</li>
+                <li>PostgresQL</li>
+              </ul>
+            </div>
+          </summary>
+          <div class="details disable-print">
+            <p>
               Data analysis via custom ETL and Google DataStudio, to communicate goals and vision with more ease.
               Internal training courses about data analysis, kubernetes and security for teamates.
               Security, automation of security and training with non-technical people.
+              Open source maintainer of CoderDojo's online ecosystem.
+              <a href="/portfolio.html#rpf">Portfolio</a>
             </p>
           </div>
+        </details>
+        <div class="print details">
+          <p>
+            Data analysis via custom ETL and Google DataStudio, to communicate goals and vision with more ease.
+            Internal training courses about data analysis, kubernetes and security for teamates.
+            Security, automation of security and training with non-technical people.
+            Open source maintainer of CoderDojo's online ecosystem.
+          </p>
         </div>
-        <div class="job">
-          <details>
-            <summary>
-              <span class="date">2016-2017</span> <span class="title">Senior Software Engineer</span> at <span class="company">CoderDojo Foundation</span>
-              <div class="keywords">Keywords: <ul>
-                  <li>NodeJs</li>
-                  <li>Kubernetes</li>
-                  <li>Docker</li>
-                  <li>VueJs</li>
-                  <li>PostgresQL</li>
-                </ul>
-              </div>
-            </summary>
-            <div class="details disable-print">
-              <p>
-                Open source maintainer of CoderDojo's online ecosystem.
-                Prioritization of work with the Foundation and the community members.
-	      	Informal research and review of actions towards the strategy and the company values.
-                Mentoring of interns, up to their last year's projects.
-              </p>
+      </div>
+      <div class="job">
+        <details>
+          <summary>
+            <span class="date">2016-2017</span> <span class="title">Senior Software Engineer</span> at <span
+              class="company">CoderDojo Foundation</span>
+            <div class="keywords">Keywords: <ul>
+                <li>NodeJs</li>
+                <li>Kubernetes</li>
+                <li>Docker</li>
+                <li>VueJs</li>
+                <li>PostgresQL</li>
+              </ul>
             </div>
-          </details>
-          <div class="print details">
+          </summary>
+          <div class="details disable-print">
             <p>
               Open source maintainer of CoderDojo's online ecosystem.
               Prioritization of work with the Foundation and the community members.
-	      Informal research and review of actions towards the strategy and the company values.
+              Informal research and review of actions towards the strategy and the company values.
               Mentoring of interns, up to their last year's projects.
+              <a href="/portfolio.html#cdf">Portfolio</a>
             </p>
           </div>
+        </details>
+        <div class="print details">
+          <p>
+            Open source maintainer of CoderDojo's online ecosystem.
+            Prioritization of work with the Foundation and the community members.
+            Informal research and review of actions towards the strategy and the company values.
+            Mentoring of interns, up to their last year's projects.
+          </p>
         </div>
-        <div class="job">
-          <details>
-            <summary>
-              <span class="date">2015-2016</span> <span class="title">Front-end Engineer</span> at <span class="company">SafeCharge Card Services</span>
-              <div class="keywords">Keywords: <ul>
-                  <li>AngularJs</li>
-                  <li>Jenkins</li>
-                  <li>Material design</li>
-                </ul>
-              </div>
-            </summary>
-            <div class="details disable-print">
-              <p>
-                End-to-end front-end development, from deployment process with Jenkins to UI development.
-              </p>
+      </div>
+      <div class="job">
+        <details>
+          <summary>
+            <span class="date">2015-2016</span> <span class="title">Front-end Engineer</span> at <span
+              class="company">SafeCharge Card Services</span>
+            <div class="keywords">Keywords: <ul>
+                <li>AngularJs</li>
+                <li>Jenkins</li>
+                <li>Material design</li>
+              </ul>
             </div>
-          </details>
-          <div class="print details">
+          </summary>
+          <div class="details disable-print">
             <p>
               End-to-end front-end development, from deployment process with Jenkins to UI development.
             </p>
           </div>
+        </details>
+        <div class="print details">
+          <p>
+            End-to-end front-end development, from deployment process with Jenkins to UI development.
+          </p>
         </div>
-        <div class="job">
-          <details>
-            <summary>
-              <span class="date">2013-2015</span> <span class="title">Software Developer</span> at <span class="company">Ophone</span>
-              <div class="keywords">Keywords: <ul>
-                  <li>PL/SQL</li>
-                  <li>Android</li>
-                  <li>HTML/CSS</li>
-                </ul>
-              </div>
-            </summary>
-            <div class="details disable-print">
-              <p>
-                Mobile development for a tracking application based on Android, to follow and report problems during trips.
-                Conception and development of a Transport Management System, managing from pricing discussion to the invoice.
-                Web and vocal reporting, SAAS solution to report on-site sales results.
-                Server, web & mobile security.
-              </p>
+      </div>
+      <div class="job">
+        <details>
+          <summary>
+            <span class="date">2013-2015</span> <span class="title">Software Developer</span> at <span
+              class="company">Ophone</span>
+            <div class="keywords">Keywords: <ul>
+                <li>PL/SQL</li>
+                <li>Android</li>
+                <li>HTML/CSS</li>
+              </ul>
             </div>
-          </details>
-          <div class="print details">
+          </summary>
+          <div class="details disable-print">
             <p>
-              Mobile development for a tracking application based on Android, to follow and report problems during trips.
-              Conception and development of a Transport Management System, managing from pricing discussion to the invoice.
-              Web and vocal reporting, SAAS solution to report on-site sales results.
-              Server, web & mobile security.
+              Mobile development for a tracking application based on Android, to follow and report problems during
+              trips.
+              Conception and development of a Transport Management System from pricing definition to the
+              client invoicing.
+              Web and vocal reporting, SAAS solution to report on on-site sales.
             </p>
           </div>
+        </details>
+        <div class="print details">
+          <p>
+            Mobile development for a tracking application based on Android, to follow and report problems during trips.
+            Conception and development of a Transport Management System, managing from pricing discussion to the
+            invoice.
+            Web and vocal reporting, SAAS solution to report on on-site sales.
+          </p>
         </div>
       </div>
-      <div class="education">
-        <h2 id="education">Education</h2>
-        <div class="job">
-          <span class="date">2014-2015</span> <span class="title">MBA in Entrepreneurial and Small Business Operations</span> at <span class="company">Université Jean Moulin, Lyon 3</span>
-        </div>
-        <div class="job">
-          <span class="date">2011-2014</span> <span class="title">MSc in Computer Science Engineering</span> at <span class="company">CPE Lyon</span>
-        </div>
+    </div>
+    <div class="education">
+      <h2 id="education">Education</h2>
+      <div class="job">
+        <span class="date">2014-2015</span> <span class="title">MBA in Entrepreneurial and Small Business
+          Operations</span> at <span class="company">Université Jean Moulin, Lyon 3</span>
       </div>
-      <div class="hobbies">
-        <h2 id="hobbies">On the side</h2>
-        <ul>
-	  <li>Experimenting <a href="https://cd-movement-growth.netlify.com/">with data</a></li>
-	  <li>Writing <a href="https://medium.com/@wardormeur">technical retrospectives</a></li>
-	  <li>Contributing to <a href="https://github.com/wardormeur">open-source</a></li>
-          <li>Mentoring at CoderDojo (CHQ, Riot Games)</li>
-        </ul>
+      <div class="job">
+        <span class="date">2011-2014</span> <span class="title">MSc in Computer Science Engineering</span> at <span
+          class="company">CPE Lyon</span>
       </div>
-    </article>
-    <footer>
-      <h3 id="contact">Contact</h3>
-      <div>
-        <a href="https://www.linkedin.com/in/gfelici/?locale=en_US">LinkedIn</a>
-        <a href="https://github.com/wardormeur">Github</a>
-        <a href="mailto:guillaume@feliciano.info">Email</a>
-      </div>
-      <div class="reference print">
-        Source : https://guillaume.feliciano.info
-      </div>
-    </footer>
-  </body>
+    </div>
+    <div class="hobbies">
+      <h2 id="hobbies">On the side</h2>
+      <ul>
+        <li>Experimenting with technologies (web-ext, ElasticSearch)</li>
+        <li>Building solutions to my problems - discovering music</li>
+        <li>Contributing to <a href="https://github.com/wardormeur">open-source</a></li>
+        <li>Mentoring at CoderDojo (CHQ, Riot Games)</li>
+      </ul>
+    </div>
+  </article>
+  <footer>
+    <h3 id="contact">Contact</h3>
+    <div>
+      <a href="https://www.linkedin.com/in/gfelici/?locale=en_US">LinkedIn</a>
+      <a href="https://github.com/wardormeur">Github</a>
+      <a href="mailto:guillaume@feliciano.info">Email</a>
+    </div>
+    <div class="reference print">
+      Source : https://guillaume.feliciano.info
+    </div>
+  </footer>
+</body>
+
 </html>

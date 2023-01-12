@@ -4,7 +4,7 @@ let arrows = [];
 // How about extending it from HTMLElement, you lazy bastard ?
 class RandomQuote {
   constructor(quote) {
-    this.quote = quote; 
+    this.quote = quote;
     this.xSide = 'right';
     this.yDirection = 'bottom';
     let isCollided = true;
@@ -12,31 +12,32 @@ class RandomQuote {
     let retry = 0; // Why using a retry when there is a potential next item to render anyway? Like the seed's gonna fix itself miraculously
     // yay bruteforce resolution of collision
     // That's what happens when you don't have a proper algo for spreading them, because you don't know how many arrows you're going to have and the size don't scale
-    while(isCollided && retry < 3) {
+    this.textAlignment = 'left';
+    while (isCollided && retry < 3) {
       this.generateRandomPosition();
       isCollided = this.checkCollision();
-      retry ++;
+      retry++;
     }
     // Do not display if after 3 tries, we don't find a randome position that is usable
     if (!isCollided) {
       this.render();
     }
   }
-  generateRandomPosition () {
+  generateRandomPosition() {
     this.width = Math.floor(Math.random() * 10) + 5;
     this.height = Math.floor(Math.random() * 10) + 5;
     const clientWidth = document.body.clientWidth;
     const clientHeight = document.body.clientHeight;
-    let horizontalAxis; 
     this.xPosition = Math.floor(Math.random() * 10) + 5;
     this.yPosition = Math.floor(Math.random() * 70) + this.margin;
     if (Math.random() > 0.5) {
       this.xSide = 'left';
+      this.textAlignment = 'right';
     }
-    const dx = (clientWidth/2) - (this.xPosition/100 * clientWidth);
-    let dy = (clientHeight/2) - (this.yPosition/100 * clientHeight);
+    const dx = (clientWidth / 2) - (this.xPosition / 100 * clientWidth);
+    let dy = (clientHeight / 2) - (this.yPosition / 100 * clientHeight);
     if (this.xSide === 'left') dy *= -1;
-    this.angle = Math.atan2(dy, dx) * (180/Math.PI); 
+    this.angle = Math.atan2(dy, dx) * (180 / Math.PI);
     // And then "ho, positions can conflict, if only we were not using absolute so they don't stack on top of each other... Well done, well done. Time to recreate your own collision detection 
   }
   checkCollision() {
@@ -52,11 +53,13 @@ class RandomQuote {
     const polygon = 'polygon(0% 20%, 56% 38%, 60% 0%, 100% 50%, 60% 100%, 60% 59%, 0 65%)';
     const xPosition = `${this.xSide}:${this.xPosition}%`;
     const yPosition = `${this.yDirection}:${this.yPosition}%`;
-    const scale = this.xSide === 'left'? 1: -1;
-    const dom = `<div class="arrow-container" style="${xPosition}; ${yPosition}">
-      <div class="arrow" style="width:${this.width}vw;height:${this.height}vh;clip-path: ${polygon}; transform: rotate(${this.angle}deg) scaleX(${scale}) ;">
+    const scale = this.xSide === 'left' ? 1 : -1;
+    const paddingForOverflow = this.height; // Magic number padding to avoid the arrow being cut by the overflow hidden required due to Firefox issue https://bugzilla.mozilla.org/show_bug.cgi?id=1671784
+    const dom = `<div class="arrow-container" style="${xPosition}; ${yPosition};">
+      <div style="border-radius: 0.01px; overflow: hidden;padding-top: ${paddingForOverflow}vh;padding-bottom: ${paddingForOverflow}vh">
+        <div class="arrow" style="width:${this.width}vw;height:${this.height}vh;clip-path: ${polygon}; transform: rotate(${this.angle}deg) scaleX(${scale});"></div>
       </div>
-      <p style="transform: rotate(${this.angle}deg); text-align: ${this.xSide}">${this.quote}</p>
+      <p style="transform: rotate(${this.angle}deg); text-align: ${this.xSide};position: relative; bottom: ${paddingForOverflow}vh">${this.quote}</p>
     </div>`;
     parentDOM.innerHTML = dom;
     parentDOM.children[0].addEventListener('mouseover', (e) => {
@@ -66,12 +69,14 @@ class RandomQuote {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => { 
+document.addEventListener("DOMContentLoaded", () => {
   let quotes = ["There's nothing else", "Click one of those", "I promise, it won't bite", "HERE, HERE", "Pretty sure you came here for that", "LÀ LÀ", "I bet you can't do it", "Too good for you?", "Here's my <a href=\"https://www.linkedin.com/in/gfelici/?locale=en_US\">linkedin</a>"];
   // A quoteFactory would have been nice, I guess.
-  // shuffle();
+  const shuffledQuotes = quotes.map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
   setTimeout(() => {
-    quotes.forEach((quote, index) => {
+    shuffledQuotes.forEach((quote, index) => {
       setTimeout(() => {
         arrows.push(new RandomQuote(quote));
       }, 5000 * index);

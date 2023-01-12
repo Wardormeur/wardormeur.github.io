@@ -119,7 +119,7 @@ section:nth-child(odd) .images img {
   left: 0;
 }
 .images{
-  transition: .5s;
+  transition: .2s;
   clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
 }
 .images:hover {
@@ -131,31 +131,5 @@ section:nth-child(odd) .images {
 }
 section:nth-child(odd) .images:hover {
   clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
-}
-.images img.scratch {
-  animation: scratch 0.7s steps(29) forwards;
-}
-.images img.scratch:hover {
-  animation: scratch_reverse 0.7s steps(29) forwards;
-  mask: url('/img/eraser-sprite.png');
-  mask-size: 3000% 100%;
-}
-@keyframes scratch {
- from {
-  mask-position: 0 0;
- }
-
- to {
-  mask-position: 100% 0;
- }
-}
-@keyframes scratch_reverse {
- from {
-  mask-position: 100% 0;
- }
-
- to {
-  mask-position: 0 0;
- }
 }
 

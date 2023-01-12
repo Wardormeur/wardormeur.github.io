@@ -50,3 +50,8 @@ h1 {
 a {
   font-family: 'Lato', sans-serif;
 }
+nav.links {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
