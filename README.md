@@ -1,3 +1,6 @@
+# Dev
+http-server .
+
 # Personal website
  - CV with printable PDF export 
  - portfolio

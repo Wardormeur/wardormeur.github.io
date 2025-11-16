@@ -59,6 +59,9 @@ header {
 } */
 
 /* Body */
+article {
+  max-width: max(50%, 300px);
+}
 article .about, article .experience, article .education {
   display: flex;
   justify-content: center;
@@ -240,4 +243,8 @@ header {
 
 .printer:hover {
   color: red;
+}
+
+.strike {
+  text-decoration: line-through;
 }
