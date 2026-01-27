@@ -31,9 +31,9 @@ header {
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: flex-end;
+  column-gap: 2em;
 }
 .profile-pic {
-  padding-left: 2em;
   z-index: 1;
 }
 .profile-pic img {
@@ -60,7 +60,7 @@ header {
 
 /* Body */
 article {
-  max-width: max(50%, 300px);
+  max-width: max(50%, 600px);
 }
 article .about, article .experience, article .education {
   display: flex;
@@ -247,4 +247,34 @@ header {
 
 .strike {
   text-decoration: line-through;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    display: flex;
+    align-content: space-between;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+  }
+  h1 > span {
+    display: block;
+    width: 100%;
+  }
+  h1 > span:last-child {
+    text-align: center;
+  }
+  .details {
+    margin-left: 1rem;
+  }
+  .job:not(:last-child)::after {
+    margin-left: 1rem;
+  }
+  .job .keywords {
+    margin-left: 2rem;
+  }
+  .job .company {
+    display: inline-block;
+    min-width: 300px;
+    margin-left: 2rem;
+  }
 }
