@@ -18,7 +18,7 @@
   <meta property="profile:last_name" content="Feliciano">
   <meta property="profile:gender" content="male">
   <meta property="profile:username" content="wardormeur">
-  <title>Guillaume Feliciano - Engineering manager</title>
+  <title>Guillaume Feliciano - Engineering manager / CTO</title>
   <link rel="stylesheet" href="/cv.css">
   <link rel="stylesheet" href="/print.css" media="print">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -29,16 +29,48 @@
      Also, if you saw this... Welcome :)
      Sources are here, nothing fancy: https://github.com/Wardormeur/wardormeur.github.io
    -->
+  <script type="text/javascript">
+    window.addEventListener('beforeprint', () => {
+      const contacts = document.querySelector('#contact');
+      // Who doesnt love some basic obfuscation..
+      // For what it's worth - just drop me an email, I'll give them to you :)
+      const info =  ['PGRpdj4=',
+    	'8J+TjSBTYWludC1NYWxvLCBGcmFuY2U=',
+	'PC9kaXY+',
+	'PGRpdj4=',
+	'8J+TsSArMzMgNjY3MDgyMzU2',
+	'PC9kaXY+'];
+      contacts.innerHTML = info.map((txt)=> b64DecodeUnicode(txt)).join(''); 
+    });
+    //https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
+    function b64EncodeUnicode(str) {
+      // first we use encodeURIComponent to get percent-encoded Unicode,
+      // then we convert the percent encodings into raw bytes which
+      // can be fed into btoa.
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+         function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+      }));
+    }
+
+    function b64DecodeUnicode(str) {
+      // Going backwards: from bytestream, to percent-encoding, to original string.
+      return decodeURIComponent(atob(str).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+    }
+  </script>
 </head>
 
 <body>
   <header>
     <div class="profile-pic">
-      <img alt="a clearly outdated picture of Guillaume F." src="/img/profile.jpg">
+      <img alt="a clearly outdated picture of Guillaume F." src="/img/profile.png">
     </div>
     <hgroup>
       <h1><span>Guillaume</span> <span>Feliciano</span></h1>
       <h2 class="print">Engineering Manager / CTO</h2>
+      <hgroup class="print" id="contact"></hgroup>
     </hgroup>
   </header>
   <article>
@@ -64,22 +96,25 @@
                 <li>Ruby on Rails/Hotwire native</li>
                 <li>ElasticSearch</li>
 		<li>N8N</li>
+		<li>AI</li>
+		<li>Management</li>
+		<li>Strategy</li>
               </ul>
             </div>
           </summary>
           <div class="details disable-print">
             <p>
-	      My focus was spread between numerous topics - from designing the technical strategy in a data-centric company to finding the right contacts to train or recruit the team for a mobile hybrid tech stack.
+	      My focus was spread between numerous topics - from roadmapping in a data-centric company to finding the right contacts to train or build a team for a mobile hybrid tech stack.
 	      This lead to rethinking our data and CRM systems to empower non-technical teams, pass security audits, democratize the usage of automation tooling empowered by AI, or direct the redesign of 2 key pieces of the business - our questionnaire builder and our recommender system.
-	      This allowed us to offset the workload outside of the technical team and fasten our delivery cycle, while ensuring quality and first and foremost - have an impact on the end-user and the company's growth.
+	      It allowed to offset the workload outside of the technical team, scale our capacity and fasten our delivery cycle, while ensuring quality and resiliency and first and foremost - have an impact on the end-user and the company's growth.
 	   </p>
 	</div>
       </details>
       <div class="print details">
 	   <p>
-	      My focus was spread between numerous topics - from designing the technical strategy in a data-centric company to finding the right contacts to train or recruit the team for a mobile hybrid tech stack.
+	      My focus was spread between numerous topics - from roadmapping in a data-centric company to finding the right contacts to train or build a team for a mobile hybrid tech stack.
 	      This lead to rethinking our data and CRM systems to empower non-technical teams, pass security audits, democratize the usage of automation tooling empowered by AI, or direct the redesign of 2 key pieces of the business - the questionnaire builder and the recommender system.
-	      This allowed to offset the workload outside of the technical team and fasten our delivery cycle, while ensuring quality and first and foremost - have an impact on the end-user and the company's growth.
+	      It allowed to offset the workload outside of the technical team, scale our capacity and fasten our delivery cycle, while ensuring quality and resiliency and first and foremost - have an impact on the end-user and the company's growth.
           </p>
         </div>
       </div>
@@ -99,10 +134,8 @@
           </summary>
           <div class="details disable-print">
             <p>
-              My responsibilities as a product engineer were end to end. I had to own our projects from the
-              technical design to their planning and maintenance, up to implementing success metrics.
-              This large breadth of ownership into a platform group lead me into multi-team projects, working with
-              varied roles and technologies in order to constantly have the most impactful results.
+              My responsibilities as a product engineer were end to end. I had to own our projects from the technical design to their planning and maintenance, up to implementing success metrics.
+              This large breadth of ownership into a platform group lead me into multi-team projects, working with varied roles and technologies in order to constantly have the most impactful results.
               <a href="/portfolio.html#intercom">Portfolio</a>
             </p>
           </div>

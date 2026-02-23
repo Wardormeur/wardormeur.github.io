@@ -37,10 +37,21 @@ header {
   z-index: 1;
 }
 .profile-pic img {
-  border-radius: var(--pic-radius);
   max-width: var(--pic-size);
   max-height: var(--pic-size);
+  /*border-bottom-left-radius: 1em 10%;
+  border-bottom-right-radius: 1em 10%;
+  */
+  background-clip: content-box;
+  border: 3px solid var(--text-color);
 }
+
+.profile-pic img::after {
+  border: 1px solid var(--text-color);
+  content: ' ';
+  position: absolute;
+}
+
 .print {
   display: none;
 }
@@ -221,15 +232,6 @@ header {
 .job .date {
   font-size: 1rem;
 }
-.profile-pic img {
-  border-radius: 0;
-}
-.profile-pic img::after {
-  border: 1px solid var(--text-color);
-  content: ' ';
-  position: absolute;
-}
-
 .printer {
   float: right;
   background-color: var(--text-color);
@@ -247,6 +249,13 @@ header {
 
 .strike {
   text-decoration: line-through;
+}
+
+@media print {
+  .profile-pic img {
+    border: none;
+    border-radius: 0px;
+  }
 }
 
 @media (max-width: 500px) {
