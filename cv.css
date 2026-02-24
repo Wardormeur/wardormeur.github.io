@@ -252,6 +252,17 @@ header {
 }
 
 @media print {
+  :root {
+    --bg-color: inherit; 
+  } 
+  h2 {
+    background-color: inherit;
+    color: var(--text-color);
+  }
+  h2::after {
+    animation: none;
+    background-color: inherit;
+  }
   .profile-pic img {
     border: none;
     border-radius: 0px;
