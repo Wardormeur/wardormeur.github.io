@@ -253,15 +253,15 @@ header {
 
 @media print {
   :root {
-    --bg-color: inherit; 
+    --bg-color: initial; 
   } 
   h2 {
-    background-color: inherit;
+    background-color: initial;
     color: var(--text-color);
   }
   h2::after {
     animation: none;
-    background-color: inherit;
+    background-color: initial !important;
   }
   .profile-pic img {
     border: none;
